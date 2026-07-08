@@ -1,0 +1,342 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Yeh line smooth scrolling enable karegi */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f172a; /* Deep techy slate/navy background */
+    color: #e2e8f0; /* Light gray text for readability */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* =========================================
+   Navbar Styles 
+   ========================================= */
+.navbar {
+    display: flex;
+    justify-content: flex-end; /* Pushes the menu to the extreme right */
+    align-items: center;
+    padding: 30px 8%;
+    background-color: transparent;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #e2e8f0;
+    font-weight: 400;
+    font-size: 16px;
+    position: relative; /* Needed for hover animation */
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ff4d6d;
+}
+
+/* Hover Underline Animation */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #ff4d6d;
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+/* =========================================
+   Hero Section Styles 
+   ========================================= */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 8% 100px;
+    min-height: 80vh;
+    gap: 40px; /* Space between left text and right card */
+}
+
+.hero-left {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* The small gradient bar above the text */
+.gradient-bar {
+    width: 250px;
+    height: 12px;
+    background: linear-gradient(90deg, #1e90ff, #9b59b6, #ff4d6d);
+    margin-bottom: 30px;
+    border-radius: 4px;
+}
+
+/* Typography for Hero Left */
+.hero-left h1 {
+    font-size: 65px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.hero-left .highlight-name {
+    color: #ff4d6d;
+    margin-bottom: 25px;
+}
+
+.hero-left p {
+    font-size: 16px;
+    color: #94a3b8;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+/* CTA Button Styles */
+.cta-btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #ff4d6d;
+    color: white;
+    padding: 15px 35px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 30px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #e63956;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 77, 109, 0.3);
+}
+
+/* =========================================
+   Substack Floating Card Styles (Right Side)
+   ========================================= */
+.substack-card {
+    background: rgba(255, 255, 255, 0.03); /* Subtle glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 400px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    animation: float 6s ease-in-out infinite; /* Applies the floating animation */
+}
+
+.card-header {
+    margin-bottom: 15px;
+}
+
+.badge {
+    background: linear-gradient(90deg, #ff4d6d, #ff758c);
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.substack-card h3 {
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 15px;
+    line-height: 1.3;
+    margin-top: 15px;
+}
+
+.substack-card p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.read-more {
+    color: #ff4d6d;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: #ffffff;
+}
+
+/* Floating Animation Keyframes */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* =========================================
+   Contact Section Styles 
+   ========================================= */
+.contact {
+    padding: 80px 8%;
+    background-color: #111827; /* Slightly darker than hero for contrast */
+}
+
+.section-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+/* Pink underline for the section title */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #ff4d6d;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center; /* space-between ko hatakar center kar diya */
+    gap: 60px; /* In dono ke beech ka direct gap */
+    max-width: 950px; /* Container ki width thodi kam kar di taaki dono paas aa jayein */
+    margin: 0 auto;
+}
+
+/* Contact Info (Left Side) */
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h3 {
+    font-size: 26px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    color: #94a3b8;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.info-list {
+    list-style: none;
+}
+
+.info-list li {
+    color: #e2e8f0;
+    font-size: 16px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.info-list li a {
+    color: #ff4d6d;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.info-list li a:hover {
+    color: #ffffff;
+}
+
+.icon {
+    font-size: 20px;
+}
+
+/* Contact Form (Right Side) */
+.contact-form {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: #1e293b; /* Dark input background */
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #ff4d6d;
+}
+
+.submit-btn {
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Contact Section Profile Photo */
+.contact-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ff4d6d;
+    box-shadow: 0 10px 20px rgba(255, 77, 109, 0.2);
+    margin-bottom: 25px;
+    transition: transform 0.3s ease;
+}
+
+.contact-photo:hover {
+    transform: scale(1.05); /* Halki si zoom animation hover karne par */
+}
+
+.icon svg {
+    vertical-align: middle; /* Icon ko text ke level par laane ke liye */
+    margin-right: 5px; /* Icon aur text ke beech thoda space */
+    color: #e2e8f0; /* Dark theme ke hisaab se light gray color */
+}
