@@ -4,7 +4,7 @@ Welcome to the repository of my personal portfolio website!
 
 I am a 2nd-year B.Tech Computer Science and Engineering student on a journey to become an AI researcher. I am passionate about exploring Artificial Intelligence and documenting my tech journey and learnings along the way.
 
-🔗 **Live Website:** [https://Ark12a.github.io/portfolio](https://Ark12a.github.io/portfolio))
+🔗 **Live Website:** [https://Ark12a.github.io/portfolio](https://Ark12a.github.io/portfolio)
 
 ## ✨ Features
 * **Modern Dark UI:** A clean, minimal, and premium dark theme tailored for a tech portfolio.
