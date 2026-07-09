@@ -13,7 +13,15 @@
 
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <ul class="nav-links">
+        <!-- Hamburger Icon (3 lines) -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- ID 'nav-links' added for JavaScript -->
+        <ul class="nav-links" id="nav-links">
             <li><a href="#home">Home</a></li>
             <!-- <li><a href="#projects">Projects</a></li> -->
             <!-- Updated: Profile Link -->
@@ -56,7 +64,7 @@
             
             <!-- Left Side: Contact Info with Photo -->
             <div class="contact-info">
-                <!-- Replace 'your-photo-link.jpg' with your actual image path or link -->
+                <!-- Replace 'me.png' with your actual image path or link -->
                 <img src="me.png" alt="Arkadyuti Dutta" class="contact-photo">
                 
                 <h3>Let's talk about Tech, Ideas, or Hackathons!</h3>
@@ -87,5 +95,15 @@
             
         </div>
     </section>
+
+    <!-- Hamburger Menu Script Added Here -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
