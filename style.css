@@ -25,6 +25,7 @@ body {
     align-items: center;
     padding: 30px 8%;
     background-color: transparent;
+    position: relative; /* Dropdown positioning ke liye zaroori */
 }
 
 .nav-links {
@@ -60,6 +61,23 @@ body {
 
 .nav-links li a:hover::after {
     width: 100%;
+}
+
+/* Hamburger Icon (Hidden on PC) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 1001; /* Menu ke upar rakhne ke liye */
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #e2e8f0;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
 /* =========================================
@@ -339,4 +357,102 @@ body {
     vertical-align: middle; /* Icon ko text ke level par laane ke liye */
     margin-right: 5px; /* Icon aur text ke beech thoda space */
     color: #e2e8f0; /* Dark theme ke hisaab se light gray color */
+}
+
+/* =========================================
+   📱 RESPONSIVE DESIGN (Mobiles & Tablets)
+   ========================================= */
+
+@media (max-width: 900px) {
+    /* Hero section ko tablet/mobile pe stack karna */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+    }
+    
+    .gradient-bar {
+        margin: 0 auto 30px auto; /* Bar ko center karna */
+    }
+}
+
+/* Tablets aur chhote laptops ke liye (768px tak) */
+@media (max-width: 768px) {
+    /* Show Hamburger Menu */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Navbar Dropdown Design */
+    .nav-links {
+        display: none; /* By default hide rahega */
+        flex-direction: column;
+        position: absolute;
+        top: 80px; /* Navbar ke neeche */
+        left: 0;
+        width: 100%;
+        background-color: #0f172a;
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0px 10px 15px rgba(0,0,0,0.5);
+        z-index: 1000;
+    }
+
+    /* JS se .active class add hone par menu dikhega */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Contact section ko column (upar-neeche) mein badalna */
+    .contact-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    /* Info aur Form ko full width (100%) dena */
+    .contact-info, 
+    .contact-form {
+        width: 100%;
+        padding: 0;
+    }
+
+    .contact-form {
+        padding: 25px;
+    }
+
+    /* Text aur headings ka size thoda chhota karna */
+    h1 {
+        font-size: 2.2rem !important; /* Force resize for mobile */
+    }
+    h2.section-title {
+        font-size: 1.8rem;
+    }
+
+    /* Sections ke side ka gap kam karna taaki mobile par jagah bache */
+    section {
+        padding: 40px 20px;
+    }
+}
+
+/* Chhote mobile screens ke liye (480px tak) */
+@media (max-width: 480px) {
+    /* Buttons ko screen ki poori width dena */
+    .cta-btn, 
+    .submit-btn {
+        width: 100%;
+        padding: 12px;
+    }
+
+    /* Inputs aur textarea ki padding mobile ke hisaab se adjust karna */
+    input, 
+    textarea {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Photo ka size thoda chhota karna */
+    .contact-photo {
+        max-width: 120px;
+        height: 120px;
+    }
 }
